@@ -23,7 +23,7 @@ public class MQTTSenderVerticle extends AbstractVerticle {
 		client = MqttClient.create(vertx);
 
 		client.rxConnect(PORT, HOST).flatMapPublisher(
-				ack -> Flowable.interval(1, TimeUnit.SECONDS).filter(it -> it % 2 == 0).flatMapSingle(it -> {
+				ack -> Flowable.interval(1, TimeUnit.SECONDS).flatMapSingle(it -> {
 					return client.rxPublish(TOPIC, Buffer.buffer("Counter : " + it), MqttQoS.AT_MOST_ONCE, false,
 							false);
 				})).subscribe();
