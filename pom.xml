@@ -32,48 +32,6 @@
 					<release>11</release>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>io.fabric8</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.21.0</version>
-				<configuration>
-					<dockerHost>unix:///var/run/docker.sock</dockerHost>
-					<images>
-						<image>
-							<name>ansi/mosquitto</name>
-							<alias>mosquitto</alias>
-							<run>
-								<ports>
-									<port>1883:1883</port>
-								</ports>
-								<wait>
-									<tcp>
-										<ports>
-											<port>1883</port>
-										</ports>
-									</tcp>
-								</wait>
-							</run>
-						</image>
-					</images>
-				</configuration>
-				<executions>
-					<execution>
-						<id>run</id>
-						<phase>pre-integration-test</phase>
-						<goals>
-							<goal>start</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>stop</id>
-						<phase>post-integration-test</phase>
-						<goals>
-							<goal>stop</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 </project>
