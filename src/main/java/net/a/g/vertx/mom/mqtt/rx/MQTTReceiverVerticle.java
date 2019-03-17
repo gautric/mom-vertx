@@ -1,5 +1,7 @@
 package net.a.g.vertx.mom.mqtt.rx;
 
+
+import static net.a.g.vertx.mom.mqtt.util.MQTTConstantes.VERTX_RX_CLIENT_RECEIVER;
 import static net.a.g.vertx.mom.mqtt.util.MQTTConstantes.HOST;
 import static net.a.g.vertx.mom.mqtt.util.MQTTConstantes.PORT;
 import static net.a.g.vertx.mom.mqtt.util.MQTTConstantes.TOPIC;
@@ -13,7 +15,6 @@ import io.vertx.reactivex.mqtt.messages.MqttPublishMessage;
 
 public class MQTTReceiverVerticle extends AbstractVerticle {
 
-	public static final String VERTX_RX_CLIENT_RECEIVER = "vertx.rx.client.receiver";
 	MqttClient client = null;
 
 	@Override
