@@ -5,6 +5,7 @@ import static net.a.g.vertx.mom.mqtt.util.MQTTConstantes.PORT;
 import static net.a.g.vertx.mom.mqtt.util.MQTTConstantes.TOPIC;
 
 import io.vertx.core.Handler;
+import io.vertx.mqtt.MqttClientOptions;
 import io.vertx.reactivex.core.AbstractVerticle;
 import io.vertx.reactivex.core.Vertx;
 import io.vertx.reactivex.mqtt.MqttClient;
@@ -12,11 +13,15 @@ import io.vertx.reactivex.mqtt.messages.MqttPublishMessage;
 
 public class MQTTReceiverVerticle extends AbstractVerticle {
 
+	public static final String VERTX_RX_CLIENT_RECEIVER = "vertx.rx.client.receiver";
 	MqttClient client = null;
 
 	@Override
 	public void start() {
-		client = MqttClient.create(vertx);
+		MqttClientOptions options = new MqttClientOptions();
+		options.setClientId(VERTX_RX_CLIENT_RECEIVER);
+		
+		client = MqttClient.create(vertx, options );
 
 		client.rxConnect(PORT, HOST).flatMap(x -> client.rxSubscribe(TOPIC, 0)).subscribe(succ -> {
 			client.publishHandler(handler());
