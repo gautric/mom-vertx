@@ -1,4 +1,4 @@
-package net.a.g.vertx.mqtt.rx;
+package net.a.g.vertx.mom.mqtt.rx;
 
 import io.vertx.reactivex.core.Vertx;
 

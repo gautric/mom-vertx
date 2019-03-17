@@ -1,8 +1,8 @@
-package net.a.g.vertx.mqtt.cb;
+package net.a.g.vertx.mom.mqtt.cb;
 
-import static net.a.g.vertx.mqtt.util.MQTTConstantes.HOST;
-import static net.a.g.vertx.mqtt.util.MQTTConstantes.PORT;
-import static net.a.g.vertx.mqtt.util.MQTTConstantes.TOPIC;
+import static net.a.g.vertx.mom.mqtt.util.MQTTConstantes.HOST;
+import static net.a.g.vertx.mom.mqtt.util.MQTTConstantes.PORT;
+import static net.a.g.vertx.mom.mqtt.util.MQTTConstantes.TOPIC;
 
 import io.netty.handler.codec.mqtt.MqttQoS;
 import io.vertx.core.AbstractVerticle;

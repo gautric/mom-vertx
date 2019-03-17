@@ -1,4 +1,4 @@
-package net.a.g.vertx.mqtt.cb;
+package net.a.g.vertx.mom.mqtt.cb;
 
 import io.vertx.core.Vertx;
 

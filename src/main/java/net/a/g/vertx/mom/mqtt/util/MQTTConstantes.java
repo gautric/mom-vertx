@@ -1,4 +1,4 @@
-package net.a.g.vertx.mqtt.util;
+package net.a.g.vertx.mom.mqtt.util;
 
 public class MQTTConstantes {
 	public static final String HOST = "localhost";
