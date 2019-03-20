@@ -7,6 +7,24 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 
+	<properties>
+		<vertx.version>3.6.3</vertx.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.vertx</groupId>
+				<artifactId>vertx-dependencies</artifactId>
+				<version>${vertx.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+
 	<dependencies>
 		<dependency>
 			<groupId>io.vertx</groupId>
@@ -18,8 +36,13 @@
 			<artifactId>vertx-mqtt</artifactId>
 			<version>3.6.3</version>
 		</dependency>
-		<!-- <dependency> <groupId>io.vertx.reactivex</groupId> <artifactId>vertx-mqtt</artifactId> 
-			<version>3.6.3</version> </dependency> -->
+
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-amqp-bridge</artifactId>
+			<version>3.6.3</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
